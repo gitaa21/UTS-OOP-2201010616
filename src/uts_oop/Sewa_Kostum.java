@@ -11,22 +11,26 @@ import java.time.format.DateTimeFormatter;
  * TGL : 2024-05-16
  */
 
-public class dataPenyewaan {
+public class Sewa_Kostum {
     private int idSewa;
     private String pelanggan;
     private String kostum;
     private LocalDate tanggalSewa;
     private LocalDate tanggalKembali;
-    private double hargaSewa;
+    private double hargaKostum;
 
-    public dataPenyewaan(String pelanggan, String kostum, LocalDate tanggalSewa, LocalDate tanggalKembali, double hargaSewa) {
+    public Sewa_Kostum(String pelanggan, String kostum, LocalDate tanggalSewa, LocalDate tanggalKembali, double hargaSewa) {
         this.pelanggan = pelanggan;
         this.kostum = kostum;
         this.tanggalSewa = tanggalSewa;
         this.tanggalKembali = tanggalKembali;
-        this.hargaSewa = hargaSewa;
+        this.hargaKostum = hargaSewa;
     }
 
+    public int getIdSewa() {
+        return idSewa;
+    }
+    
     public String getPelanggan() {
         return pelanggan;
     }
@@ -44,16 +48,17 @@ public class dataPenyewaan {
     }
 
     public double getHargaSewa() {
-        return hargaSewa;
+        return hargaKostum;
     }
 
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        return "Nama Pelanggan: " + pelanggan + "\n" +
+        return "ID Sewa: " + idSewa + "\n" +
+                "Nama Pelanggan: " + pelanggan + "\n" +
                 "Jenis Kostum: " + kostum + "\n" +
                 "Tanggal Peminjaman: " + tanggalSewa.format(formatter) + "\n" +
                 "Tanggal Pengembalian: " + tanggalKembali.format(formatter) + "\n" +
-                "Harga Sewa: " + hargaSewa + "\n";
+                "Harga Sewa: " + hargaKostum + "\n";
     }
 }
